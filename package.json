@@ -1,0 +1,23 @@
+{
+  "name": "CaluculateTakeHomePay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helenjanei/take-home-pay.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helenjanei/take-home-pay/issues"
+  },
+  "homepage": "https://github.com/helenjanei/take-home-pay#readme",
+  "dependencies": {
+    "jest": "^26.6.3"
+  }
+}
