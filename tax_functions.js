@@ -23,6 +23,25 @@ const calculateTakeHome = function() {
     return parseFloat(tax.toFixed(2));
    
 }
+
+function calcNi(amount){
+    let calculate = 0;
+    if(amount < 15000){
+
+        ni = 0;
+
+    }
+    else if( amount < 50000){
+    ni = (amount - 15000) * .12;    
+    }
+    else{
+    upperNi = (amount - 50000) * .02
+    ni = 4200 + upperNi;
+    }
+ 
+    return parseFloat(ni.toFixed(2));
+    
+}
 }
 
 window.onload = function () {
