@@ -1,0 +1,39 @@
+ 
+  section {
+   
+    align-self:center;
+    padding: 10em 8em;
+  }
+  
+  
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 80%;
+    width:50%;
+    margin: 3em;
+    
+    border: 3px solid#00263e;
+  }
+  
+  h1 {
+    
+    color: #00263e;
+    margin-top: 0;
+  }
+  
+  
+  label {
+    float: left;
+    width: 10em;
+    text-align: right;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    
+  }
+  
+  input {
+    background-color: #6facde;
+    margin-left: 1em;
+    margin-bottom: 1em;
+  }
