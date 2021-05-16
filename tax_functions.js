@@ -42,6 +42,13 @@ function calcNi(amount){
     return parseFloat(ni.toFixed(2));
     
 }
+
+
+function calcNet(amount, tax, ni){
+
+    return parseFloat((amount - (tax + ni)).toFixed(2));
+}
+
 }
 
 window.onload = function () {

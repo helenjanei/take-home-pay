@@ -32,6 +32,11 @@ function calcNi(amount){
     
 }
 
+function calcNet(amount, tax, ni){
+
+    return parseFloat((amount - (tax + ni)).toFixed(2));
+}
+
 
 describe('calcTax function', () => {
 
@@ -73,4 +78,26 @@ test('returns correct National Insurance when salary is above 50000', () => {
     expect(calcNi(473000)).toEqual(12660)
   })
 
+})
+
+
+
+
+describe('calcNet function', () => {
+  test('returns a total the same as salary when salary is Equallow 15000', () => {
+     expect(calcNet(14000, 0, 0)).toEqual(14000)
+    expect(calcNet(12000.12, 0, 0)).toEqual(12000.12)
+    expect(calcNet(0, 0, 0)).toEqual(0)
+  })
+test('returns correct net pay when salary is Equaltween 15000 and 50000', () => {
+   expect(calcNet(20000, 1000, 600)).toEqual(18400)
+  expect(calcNet(17000.87, 400.17, 240.10)).toEqual(16360.6)
+    expect(calcNet(35000, 4000, 2400)).toEqual(28600)
+  })
+test('returns correct net pay when salary is above 50000', () => {
+    expect(calcNet(55000, 9000, 4300)).toEqual(41700)
+  expect(calcNet(67000.89, 13800.36, 4540.02)).toEqual(48660.51)
+    expect(calcNet(109000, 30600, 5380)).toEqual(73020)
+    expect(calcNet(473000, 176200, 12660)).toEqual(284140)
+  })
 })
