@@ -10,15 +10,12 @@ function calcTax(amount){
     tax = 7000 + ((amount - 50000) * .40);
     }
     return parseFloat(tax.toFixed(2));
-   
 }
 
 function calcNi(amount){
     let calculate = 0;
     if(amount < 15000){
-
         ni = 0;
-
     }
     else if( amount < 50000){
     ni = (amount - 15000) * .12;    
@@ -27,19 +24,15 @@ function calcNi(amount){
     upperNi = (amount - 50000) * .02
     ni = 4200 + upperNi;
     }
- 
     return parseFloat(ni.toFixed(2));
-    
-}
+    }
 
 function calcNet(amount, tax, ni){
-
     return parseFloat((amount - (tax + ni)).toFixed(2));
 }
 
 
 describe('calcTax function', () => {
-
   test('returns a total of 0 when salary is below 15000', () => {
      expect(calcTax(14000)).toEqual(0.00)
     expect(calcTax(12540.89)).toEqual(0.00)
@@ -57,7 +50,6 @@ test('returns correct tax when salary is above 50000', () => {
     expect(calcTax(473000)).toEqual(176200)
   })
 })
-
 
 
 describe('calcNi function', () => {
@@ -79,8 +71,6 @@ test('returns correct National Insurance when salary is above 50000', () => {
   })
 
 })
-
-
 
 
 describe('calcNet function', () => {
