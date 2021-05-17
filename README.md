@@ -7,7 +7,7 @@ A take home pay calculator made using Javascript.
 To get a copy of this project onto your own machine, fork the repo, then clone it into your local directory:
 
 ```
-git clone <URL-of-your-forked-repo>
+git clone <https://github.com/helenjanei/take-home-pay.git>
 ```
 
 ## Installing
