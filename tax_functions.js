@@ -7,17 +7,16 @@ const calculateTakeHome = function () {
   let grossPay = parseFloat($("grossPay").value);
   $("tax").value = calcTax(grossPay);
   $("nationalInsurance").value = calcNationalInsurance(grossPay);
-  $("net").value = calcNet(grossPay);
+  $("takeHomePay").value = calcTakeHomePay(grossPay);
 
   try {
-    if (grossPay === "") throw "empty";
+    if (grossPay === "") throw "empty"; // not catching empty input - not sure why
     if (isNaN(grossPay)) throw "not a number";
   } catch (err) {
     alert("Input is " + err);
   }
 
   function calcTax(grossPay) {
-    let calculate = 0;
     if (grossPay < 15000) {
       tax = 0;
     } else if (grossPay < 50000) {
@@ -29,7 +28,6 @@ const calculateTakeHome = function () {
   }
 
   function calcNationalInsurance(grossPay) {
-    let calculate = 0;
     if (grossPay < 15000) {
       nationalInsurance = 0;
     } else if (grossPay < 50000) {
@@ -41,10 +39,9 @@ const calculateTakeHome = function () {
     return parseFloat(nationalInsurance.toFixed(2));
   }
 
-  function calcNet(grossPay) {
-    let calculate = 0;
-    let net = grossPay - (tax + nationalInsurance);
-    return parseFloat(net.toFixed(2));
+  function calcTakeHomePay(grossPay) {
+    let takeHomePay = grossPay - (tax + nationalInsurance);
+    return parseFloat(takeHomePay.toFixed(2));
   }
 };
 
