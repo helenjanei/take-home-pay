@@ -9,6 +9,13 @@ const calculateTakeHome = function () {
   $("nationalInsurance").value = calcNationalInsurance(grossPay);
   $("net").value = calcNet(grossPay);
 
+  try {
+    if (grossPay === "") throw "empty";
+    if (isNaN(grossPay)) throw "not a number";
+  } catch (err) {
+    alert("Input is " + err);
+  }
+
   function calcTax(grossPay) {
     let calculate = 0;
     if (grossPay < 15000) {
